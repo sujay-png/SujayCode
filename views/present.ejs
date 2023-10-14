@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>SUJAY CODE</title>
+</head>
+<body>
+  <div id="main">
+    <div id="side-panel">
+      <h4>SUJAY CODE</h4>
+      <div class="line"></div>
+      <div class="fileicon">
+        <h5>Folder Name</h5>
+        <div class="icons">
+          <i id="filecreate" class="ri-file-add-fill"></i>
+          <i id="foldercreate" class="ri-folder-add-fill"></i>
+          <i id="refresh" class="ri-restart-fill"></i>
+        </div>
+      </div>
+      <form id="fileform" class="formcreation" action="/filecreation">
+        <input name="filename" type="text" placeholder="file">
+      </form>
+      <form id="folderform" class="formcreation" action="/foldercreation">
+        <input name="foldername" type="text" placeholder="folder">
+      </form>
+      <div id="files">
+       <% files.forEach(function(dets){ %>
+        <h5 class="file">
+        <%  if(dets.isDirectory()){ %>
+            <i class="ri-folder-2-line"></i>
+        <%  } else{ %>
+            <i class="ri-file-2-line"></i>
+       <% } %>
+       <% if(dets.isDirectory()){ %>
+         <%= dets.name %>
+      <% }else{ %>
+        <a href="/file/<%= dets.name%>"> <%= dets.name %> </a>
+     <%  } %>
+        </h5>
+      <% }) %>
+      </div>
+    </div>
+    <div id="right-part">
+      <div id="rightnav">
+        <div class="openfile">
+          <%= filename %>
+        <a href="/"><i class="ri-close-line"></i></a>
+        </div>
+      </div>
+      <form action="/filechange/<%= filename %>" method="post">
+        <textarea name="filedata"> <%= filedata %> </textarea>
+        <input id="buttonsave" type="submit" value="save file">
+      </form>
+      <!-- <small>nothing here.</small> -->
+    </div>
+  </div>
+
+<script>
+
+function turnoff(){
+  document.querySelectorAll(".formcreation").forEach(function(dets){
+  dets.style.display = "none"
+  });
+}
+
+let filecreate = document.querySelector("#filecreate")
+  filecreate.addEventListener("click",function(){
+  turnoff()
+  document.querySelector("#fileform").style.display = "initial"
+})
+
+let foldercreate = document.querySelector("#foldercreate")
+  foldercreate.addEventListener("click",function(){
+  turnoff()
+  document.querySelector("#folderform").style.display = "initial"
+})
+
+let refresh = document.querySelector("#refresh")
+  refresh.addEventListener("click",function(){
+    document.querySelector(".files").innerHTML = ""
+  })
+
+</script>
+</body>
+</html>

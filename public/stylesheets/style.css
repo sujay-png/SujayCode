@@ -1,0 +1,162 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: PT sans;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+}
+#main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+#side-panel{
+  width: 20%;
+  height: 100%;
+  background-color: #537188;
+  padding: 20px;
+}
+#side-panel h4{
+  font-size: 20px;
+  color: #4C4C6D;
+  color: beige;
+}
+#side-panel .line{
+  height: 1px;
+  width: 100%;
+  background-color: beige;
+  margin-top: 10px;
+}
+#side-panel .fileicon {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+#side-panel .fileicon h5{
+  font-size: 15px;
+  color: beige;
+  font-weight: 400;
+}
+#side-panel .fileicon .icons{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+#side-panel .fileicon .icons i{
+  font-size: 18px;
+  color: beige;
+}
+.file{
+  padding: 12px 22px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: .1px solid beige;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  color: beige;
+}
+
+#side-panel form{
+  display: none;
+}
+#side-panel form ::placeholder{
+  text-transform: capitalize;
+  color: #C1AEFC;
+}
+#side-panel input{
+  width: 100%;
+  font-weight: 500;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+}
+
+#right-part{
+  width: calc(100% - 20%);
+  height: 100%;
+  backdrop-filter: blur(10px) saturate(159%);
+  -webkit-backdrop-filter: blur(10px) saturate(159%);
+  background-color: #abaeb3;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #000;
+  font-weight: 900;
+  padding: 0px 20px;
+}
+#right-part #rightnav{
+  width: 100%;
+  padding: 8px;
+  border-bottom: .2px solid #4C4C6D;
+}
+#right-part .openfile{
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  width: fit-content;
+  background-color: #537188;
+  border-radius: 8px;
+  color: #fff;
+}
+#right-part .openfile i{
+  margin-left: 10px;
+}
+#right-part .openfile i:hover{
+  color: #4C4C6D;
+  background-color: #C1AEFC;
+  border-radius: 50px;
+}
+#right-part textarea{
+  height: 100%;
+  width: 100%;
+  background-color:transparent;
+  color: #000;
+  font-size: 20px;
+  font-family: consolas;
+  outline: none;
+  border: none;
+  padding: 20px;
+  text-transform: lowercase;
+}
+#right-part form{
+  width: 100%;
+  height: calc(100% - 75px);
+}
+#right-part #buttonsave{
+  position: absolute;
+  top:2%;
+  padding: 7px 18px;
+  right: 2%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color: #537188;
+  font-weight: 600;
+  color: #fff;
+}
+
+#right-part small{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
